@@ -14,10 +14,10 @@ function App() {
   const [members, setMembers] = useState([]);
   const [messages, setMessages] = useState([]);
   const [privateMembersMsg, setPrivateMembersMsg] = useState({});
-  const [newMessages, setNewMessages] = useState({});
+  const [newMessage, setNewMessage] = useState({});
   const user = useSelector((state) => state.user);
   return (
-    <AppContext.Provider value={{socket,rooms,setRooms,currentRoom,setCurrentRoom,members,setMembers,messages,setMessages,privateMembersMsg,setPrivateMembersMsg,newMessages,setNewMessages}}>
+    <AppContext.Provider value={{socket,rooms,setRooms,currentRoom,setCurrentRoom,members,setMembers,messages,setMessages,privateMembersMsg,setPrivateMembersMsg,newMessage,setNewMessage}}>
       <BrowserRouter>
         <Navigation />
         <Routes>

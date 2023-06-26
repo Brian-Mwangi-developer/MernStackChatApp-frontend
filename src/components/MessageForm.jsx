@@ -33,7 +33,7 @@ export const MessageForm = () => {
         if (!message) return;
         const today = new Date();
         const minutes = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes();
-        const time = today.getHours + ":" + minutes;
+        const time = today.getHours() + ":" + minutes;
         const roomId = currentRoom;
 
         //Emit the message to the Server
@@ -44,7 +44,7 @@ export const MessageForm = () => {
     return (
         <>
 
-            <div className="w-full h-96 px-5 flex flex-col justify-between border border-gray-500 overflow-y-scroll">
+            <div className="w-full h-96 px-5 flex flex-col justify-between border border-gray-500 rounded-md overflow-y-scroll">
                 {!user && <div className='bg-red-300  px-4 font-sans font-bold text-2xl'>Please Login In</div>}
                 {user &&
                 messages.map(({_id:date, messageByDate},idx) =>(
